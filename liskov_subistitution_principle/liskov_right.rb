@@ -9,7 +9,11 @@ class Rectangle
 end
 
 class Square < Rectangle
-  def side= number
+  def length= number
+    @length = @width = number
+  end
+
+  def width= number
     @length = @width = number
   end
 end
@@ -24,6 +28,6 @@ r.length = 4
 tell_rectangles_dimentions r
 
 s = Square.new
-s.side = 5
+s.length = 5
+puts s
 tell_rectangles_dimentions s
-

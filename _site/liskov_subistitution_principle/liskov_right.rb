@@ -1,4 +1,4 @@
-# liskov_wrong.rb
+# liskov_right.rb
 
 class Rectangle
   attr_accessor :length, :width
@@ -9,6 +9,9 @@ class Rectangle
 end
 
 class Square < Rectangle
+  def side= number
+    @length = @width = number
+  end
 end
 
 def tell_rectangles_dimentions rectangle
@@ -21,5 +24,6 @@ r.length = 4
 tell_rectangles_dimentions r
 
 s = Square.new
-s.length = 5
+s.side = 5
 tell_rectangles_dimentions s
+
